@@ -1,0 +1,12 @@
+{
+  "name": "Two of Us, Water — drink with me",
+  "short_name": "Two of Us Water",
+  "description": "A gentle water tracker for Mena and Ammar — a ring for today, fourteen days of little bars, and the streak we keep together.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#090b20",
+  "theme_color": "#090b20",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
