@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two of Us, Water — drink with me</title>
+  <meta name="description" content="A gentle water tracker for Mena and Ammar — a ring for today, fourteen days of little bars, and the streak we keep together.">
+  <meta property="og:title" content="Two of Us, Water — drink with me">
+  <meta property="og:description" content="A gentle water tracker for Mena and Ammar — a ring for today, fourteen days of little bars, and the streak we keep together.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#090b20">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="water">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://menaammarpro.github.io/">All projects</a>
+      <a href="https://menaammarpro.github.io/loveformymena/">Letters</a>
+      <a href="index.html" class="active">Water</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">A little care, every day</p>
+      <h1>Drink <span>with me</span></h1>
+      <p class="subtitle">Water is the smallest kind of looking after each other.
+        One glass at a time, together.</p>
+    </section>
+
+    <section class="panel ring-panel">
+      <h2 class="center">Today</h2>
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 200 200" role="img" aria-label="Glasses of water today">
+          <circle class="ring-track" cx="100" cy="100" r="86"></circle>
+          <circle id="ring-progress" class="ring-fill" cx="100" cy="100" r="86"></circle>
+        </svg>
+        <div class="ring-center">
+          <span class="ring-count" id="ring-count">0</span>
+          <span class="ring-goal" id="ring-goal">of 8</span>
+          <span class="ring-label" id="ring-label">glasses today</span>
+        </div>
+      </div>
+
+      <p id="glasses-row" class="glasses-row" aria-hidden="true"></p>
+
+      <div class="water-controls">
+        <button id="btn-minus" class="button button-ghost" type="button" aria-label="Remove a glass">&minus; a glass</button>
+        <button id="btn-plus" class="button button-primary" type="button" aria-label="Add a glass">+ a glass</button>
+      </div>
+      <p id="water-note" class="water-note" role="status" aria-live="polite">&nbsp;</p>
+    </section>
+
+    <section class="stats-row" aria-label="Our numbers">
+      <div class="stat-card">
+        <span class="stat-num" id="stat-today">0</span>
+        <span class="stat-label">today</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-streak">0</span>
+        <span class="stat-label">day streak</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-best">0</span>
+        <span class="stat-label">best streak</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-total">0</span>
+        <span class="stat-label">glasses all-time</span>
+      </div>
+    </section>
+
+    <section class="panel history-panel">
+      <h2>These last fourteen days</h2>
+      <div id="history-bars" class="history-bars" role="img" aria-label="Glasses over the last fourteen days"></div>
+      <p id="history-summary" class="water-note">&nbsp;</p>
+    </section>
+
+    <section class="panel goal-panel">
+      <h2>Our daily goal</h2>
+      <div class="goal-row">
+        <button id="goal-minus" class="button button-ghost" type="button" aria-label="Lower the goal">&minus;</button>
+        <span id="goal-value" class="goal-value">8</span>
+        <button id="goal-plus" class="button button-ghost" type="button" aria-label="Raise the goal">+</button>
+        <span class="goal-unit">glasses a day</span>
+      </div>
+      <p class="hint">Eight glasses is a kind, ordinary place to start &mdash; change it
+        any time and the ring will follow.</p>
+    </section>
+
+    <section class="panel reminder-panel">
+      <h2>A gentle reminder</h2>
+      <label class="switch">
+        <input type="checkbox" id="reminder-toggle">
+        <span>Nudge me if I forget (while this page is open)</span>
+      </label>
+      <div class="water-controls">
+        <button id="btn-remind-now" class="button button-ghost" type="button">Remind me in a minute</button>
+      </div>
+      <p id="reminder-note" class="water-note">&nbsp;</p>
+    </section>
+
+    <section class="panel info-panel">
+      <h2>Why we keep it</h2>
+      <ul>
+        <li><strong>Small and kind</strong> &mdash; tap a glass whenever you drink one; that is the whole job.</li>
+        <li><strong>The ring</strong> fills as the day goes on, and turns gold when you reach the goal.</li>
+        <li><strong>The streak</strong> is the days in a row you both reached the goal &mdash; today only counts once you get there.</li>
+        <li><strong>Fourteen bars</strong> show the last two weeks, so you can see the shape of your days.</li>
+        <li><strong>Reminders</strong> only ever come from this page while it is open. Nothing is sent anywhere.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with love, just for you <span aria-hidden="true">&#9829;</span></p>
+    <p class="footer-small">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
+  </footer>
+
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
