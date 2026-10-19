@@ -1,0 +1,255 @@
+/* love-water — page styles on top of the shared love theme */
+
+main {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-bottom: 3rem;
+}
+
+.hero {
+  min-height: auto;
+  text-align: center;
+  padding: 2.4rem 1rem 0;
+}
+
+.hero h1 { margin: 0 0 0.4rem; }
+.subtitle { margin: 0 auto; color: var(--muted); max-width: 34rem; }
+
+/* ---------- panels ---------- */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: var(--shadow);
+  max-width: 40rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.panel h2 { margin: 0 0 0.6rem; font-size: 1.1rem; }
+.panel h2.center { text-align: center; }
+.panel p { color: var(--muted); margin: 0.4rem 0 0.8rem; }
+
+/* ---------- the ring ---------- */
+
+.ring-panel { max-width: 34rem; }
+
+.ring-wrap {
+  position: relative;
+  width: min(15rem, 62vw);
+  aspect-ratio: 1 / 1;
+  margin: 0.4rem auto 0.8rem;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 14;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: #ff9fcf;
+  stroke-width: 14;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.45s ease, stroke 0.3s ease;
+}
+
+.ring-fill.is-complete { stroke: #ffc94d; }
+
+.ring-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ring-count {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+}
+
+.ring-goal { font-size: 0.95rem; color: var(--muted); margin-top: 0.1rem; }
+.ring-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ---------- glasses ---------- */
+
+.glasses-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  margin: 0 auto 0.9rem;
+  max-width: 26rem;
+}
+
+.glass {
+  width: 1.05rem;
+  height: 1.4rem;
+  border: 1.5px solid var(--pink-strong);
+  border-top-width: 1px;
+  border-radius: 3px 3px 7px 7px;
+  background: transparent;
+  display: inline-block;
+}
+
+.glass.is-filled {
+  background: linear-gradient(180deg, #ffd9ec, #ff72b8);
+  border-color: #ff72b8;
+}
+
+.water-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.water-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-height: 1.2em;
+  margin: 0.7rem 0 0;
+}
+
+/* ---------- stats ---------- */
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.stat-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.8rem 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stat-num { font-size: 1.35rem; font-weight: 700; color: var(--text); }
+.stat-label { font-size: 0.7rem; color: var(--muted); }
+
+/* ---------- history ---------- */
+
+.history-panel { max-width: 44rem; }
+
+.history-bars {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 0.32rem;
+  align-items: end;
+  height: 9.5rem;
+  margin-top: 0.4rem;
+}
+
+.history-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  gap: 0.3rem;
+}
+
+.bar-track {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  background: var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  min-height: 0;
+  border-radius: 7px;
+  background: linear-gradient(180deg, #ff9fcf, #ff72b8);
+  transition: height 0.3s ease;
+}
+
+.bar-fill.is-met { background: linear-gradient(180deg, #ffe08a, #ffc94d); }
+
+.bar-label { font-size: 0.6rem; color: var(--muted); text-align: center; }
+.bar-label.is-today { color: var(--pink); font-weight: 700; }
+
+/* ---------- goal ---------- */
+
+.goal-panel { max-width: 34rem; }
+
+.goal-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.goal-row .button { min-width: 2.6rem; }
+
+.goal-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 2ch;
+  text-align: center;
+}
+
+.goal-unit { color: var(--muted); font-size: 0.9rem; }
+
+.hint { color: var(--muted); margin: 0.6rem 0 0; font-size: 0.88rem; }
+
+/* ---------- reminder ---------- */
+
+.switch {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.switch input { width: 1.1rem; height: 1.1rem; accent-color: var(--pink-strong); }
+
+.info-panel ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.info-panel strong { color: var(--text); }
+
+@media (max-width: 560px) {
+  main { width: calc(100% - 22px); }
+  .panel { padding: 1rem 0.85rem; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .history-bars { gap: 0.2rem; height: 8rem; }
+  .bar-label { font-size: 0.5rem; }
+  .ring-count { font-size: 2.5rem; }
+}
